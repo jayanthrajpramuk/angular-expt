@@ -1,0 +1,6 @@
+- since every project has a starting point , we have app component , app module , app route and app html out side filder structure but of course with in app folder.
+
+- out side app folder we only need to have ployfills, favicon , index.html etc.
+Not specific to angular but settings for typings , etc
+
+

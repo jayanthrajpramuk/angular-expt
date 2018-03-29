@@ -1,0 +1,10 @@
+
+<h2>Angular Forms</h2>
+
+  <form #form="ngForm">
+
+    <input type="text" placeholder="name" name="name" ngModel="name">
+    <button type="submit">Ok</button>
+  </form>
+
+  {{form.name}}

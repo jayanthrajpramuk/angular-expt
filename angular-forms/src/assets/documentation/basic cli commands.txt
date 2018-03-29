@@ -1,0 +1,7 @@
+ng new angular-forms ==> this is used to create blank angular project.
+
+ng generate class Hero ==> this is used to create new class.
+
+ng generate component HeroForm ==> new component
+
+https://github.com/angular/angular-cli/issues/9020
