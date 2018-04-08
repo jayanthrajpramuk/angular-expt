@@ -1,0 +1,13 @@
+Modules in Java Scripts:
+- helps in encapsulation. Giving only those which we need publicly.
+- export only what you need and import only those what we need.
+
+SystemJS :
+- it will actually help us to load only those JS files which are actually necesary to
+do a perticular operation by using import and export statements and a configuration file for systemJS
+
+Typescript Overview
+--------------------
+
+
+

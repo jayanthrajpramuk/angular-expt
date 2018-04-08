@@ -1,0 +1,61 @@
+Section 3 :
+----------
+Building Blocks : -> Components , templates , directives and services.
+
+every application has atleat 1 module (app module).
+when application grows this app module will have many child modules.
+Each module will have 1 or more components.
+Gloria Application : GloriaModule --> procModule , recieveModule , .... each module will have
+atleast 1 component
+
+3 steps : create , register , add html markup
+
+Installing angular 4 : npm install -g @angular/cli@1.4.10, This will help whenever we wnat to install Angular 4 project. Especially the dependencies
+
+USing components we can extend the html library.
+if we want <div id="courses"> selector will be #courses
+if we want <div class="courses"> selector will be .courses
+if we want <courses></courses> selector will be courses
+
+
+regarding html rendering :
+identify the html tag -> <courses></courses>
+
+then go to currosponding mapped component. then go to mapped html . this is what will be rendered in the page. but not the content inside th ecourses tag.
+
+its like put the contents which is present in component html in index html selector tag.
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+
+ie put the content present in app.component.html in app-root selector
+
+QUESTION : Y IT DOESNT PICK THE HTML TAG AND SEARCH COMPONENT FROM THE INDEX.html
+bootstrapping multiple is not possible. Mutiple child views are possible though
+it depends on which component we give for bootstrapping
+
+ng g c "component-name"
+
+
+why asterisk infront of directive ??
+
+The component should should not include any logic other than the presentation logic.
+
+there is no decorater for service.
+
+
+we can register a service only for a perticular component in the decorater(provider) or we can
+also register in the module in provider
+so that all the components inside the module will be able to access the service.
+
+ng g s "serviceName"
+angular automatically appends 'service'
+
+injectable : is need when a perticular service is in need of other dependency. then it needs
+injectable. if there is none then there is no need. but its BP to add.
+
+But we do not need in component as it is internally included.
+
+
