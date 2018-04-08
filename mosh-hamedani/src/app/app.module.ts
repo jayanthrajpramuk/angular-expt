@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -9,6 +10,7 @@ import { TestCliComponent } from './test-cli/test-cli.component';
 import { DataBindingExampleComponent } from './data-binding-example/data-binding-example.component';
 import { CoursesComponent } from './courses/courses.component';
 import {CoursesServiceService } from './courses-service.service';
+import { SummaryPipe } from './summary.pipe';
 
 @NgModule({
   declarations: [
@@ -18,10 +20,12 @@ import {CoursesServiceService } from './courses-service.service';
     IndexComponent,
     TestCliComponent,
     DataBindingExampleComponent,
-    CoursesComponent
+    CoursesComponent,
+    SummaryPipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [CoursesServiceService],
   bootstrap: [AppComponent]

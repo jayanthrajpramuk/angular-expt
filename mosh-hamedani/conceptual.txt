@@ -10,7 +10,9 @@ atleast 1 component
 
 3 steps : create , register , add html markup
 
-Installing angular 4 : npm install -g @angular/cli@1.4.10, This will help whenever we wnat to install Angular 4 project. Especially the dependencies
+Installing angular 4 :
+npm install -g @angular/cli@1.4.10
+This will help whenever we want to install Angular 4 project. Especially the dependencies
 
 USing components we can extend the html library.
 if we want <div id="courses"> selector will be #courses
@@ -20,8 +22,7 @@ if we want <courses></courses> selector will be courses
 
 regarding html rendering :
 identify the html tag -> <courses></courses>
-
-then go to currosponding mapped component. then go to mapped html . this is what will be rendered in the page. but not the content inside th ecourses tag.
+then go to currosponding mapped component. then go to mapped html . this is what will be rendered in the page. but not the content inside the courses tag.
 
 its like put the contents which is present in component html in index html selector tag.
 @Component({
@@ -33,7 +34,7 @@ its like put the contents which is present in component html in index html selec
 ie put the content present in app.component.html in app-root selector
 
 QUESTION : Y IT DOESNT PICK THE HTML TAG AND SEARCH COMPONENT FROM THE INDEX.html
-bootstrapping multiple is not possible. Mutiple child views are possible though
+bootstrapping multiple is not/ known possible. Mutiple child views are possible though
 it depends on which component we give for bootstrapping
 
 ng g c "component-name"
@@ -57,5 +58,70 @@ injectable : is need when a perticular service is in need of other dependency. t
 injectable. if there is none then there is no need. but its BP to add.
 
 But we do not need in component as it is internally included.
+
+
+Section 4 : Displaying data and handling events, pipes applying CSS
+------------
+Property binding is nothing but , binding the attribute which is in component to any property of
+ a dom element. it may be name , id, class, src etc any thing.
+
+ String interpolation for text , div, p etc where only text is being displayed.
+ use property binding for others.
+
+ DOM vs HTML in the case of attribute binding.
+
+ html will be parsed and converted to DOM. most of the cases the element property will have 1-1 mapping with dom. but in certain cases we do not have.
+ In those cases you need to use 'attr.' to target html but not DOM. In angular Ideally we always target dom than html properties.
+
+ Error example : Can't bind to 'colspan' since it isn't a known property of 'td'
+
+important to note that property binding  works only 1 way. from component to dom
+
+dist in node_modules : distributable
+
+there is a different way of adding css to project. add it in styles.css
+
+Class binding:
+--------------
+if we want certain class to be present always then use class always and the class which you want
+ to toggle for that apply condition.
+
+ <div class ="class1 class2" [class.targetclassName] = "binding property"></div>
+ class1 and 2 will be applued always . but targetclassName will be applied depending upon the
+ binding property value.
+
+ style binding:
+ --------------
+ here the property has to be valid method of style object
+
+ event binding :
+ --------------
+ event propogation mechanisim.
+ div - click event
+    button - click event
+
+  now when user clicks then event will bubble up. meaning we get both messages
+
+  stopeventpropogation -> stopPropogation
+
+  filtering : eventname.keyName --> onkeyUp.enter
+
+  using template variable in the elemnt(html)
+  Can't bind to 'ngModel' since it isn't a known property of 'input
+
+  for some reason #name : template variable fails.
+
+  Pipes:
+  ------
+date pipe : check angular io for format : | date : format
+currency -> |currency:currency:display icon
+number pipe : 1.2-2
+
+Custom pipe:
+-----------
+
+ng g pipe 'pipename'
+
+
 
 

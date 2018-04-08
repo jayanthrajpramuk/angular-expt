@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { CoursesServiceService } from '../courses-service.service';
 
 @Component({
@@ -8,7 +9,26 @@ import { CoursesServiceService } from '../courses-service.service';
 })
 export class CoursesComponent implements OnInit {
 
-public courseList ;
+  public courseList;
+  public title = 'League of Shadows 2';
+  public path = './assets/los.png';
+  public colspan = 20;
+  public flag1 = false;
+  public flag2 = true;
+  public flag3 = true;
+  public name;
+  public rate = 12345;
+  public veryLargeText = 'veryLargeTextveryLargeTextveryLargeTextveryLargeTextveryLargeTextveryLargeText';
+
+public buttonClicked(event) {
+console.log(event.currentTarget.className);
+  console.log('button clicked : ' + this.name);
+}
+
+public submitVal(name) {
+  console.log('enter presed : ' + name);
+}
+
 public trackByFn(index, item) {
 console.log('this is getting called !' + index + item);
 }

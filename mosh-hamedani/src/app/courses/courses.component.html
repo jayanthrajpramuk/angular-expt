@@ -1,7 +1,37 @@
 
+{{veryLargeText | summary:20:30}}
+<hr>
+
 <ul>
   <li *ngFor="let course of courseList; trackBy: trackByFn; let i = index;">
-    {{i}} {{course}}
+    {{i}} {{course | uppercase}}
   </li>
 </ul>
+
+<div>
+{{title}}
+<img height="30px" src="./assets/los.png"/> - using direct
+</div>
+<hr>
+<button class="btn btn-danger" [class.mycustomClass]="flag1" (click)="buttonClicked($event)"> Added
+bootstrap :)
+ </button>
+<button class="btn btn-primary" [class.mycustomClass]="flag2" (click)="buttonClicked($event)"> Added bootstrap :) </button>
+<button class="btn btn-primary" [style.backgroundColor]="flag3 ? 'green':'black'" (click)="buttonClicked($event)"> Added style
+Binding :)
+ </button>
+ <input type="text" name="name" (keyup.enter)="submitVal(spy.value)" #spy [(ngModel)] = "name">
+<hr>
+<div>
+{{title}}
+<img height="30px" [src]="path"/> - using Path
+</div>
+<hr>
+<table border="1px" class="table">
+  <tr>
+    <td [attr.colspan]="colspan">hey</td>
+    <td [attr.colspan]="colspan">there</td>
+  </tr>
+</table>
+
 
