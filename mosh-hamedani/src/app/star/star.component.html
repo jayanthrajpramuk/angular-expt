@@ -1,0 +1,23 @@
+<p>
+  star works!
+</p>
+
+
+{{isFav}} - {{title}}<hr>
+
+{{obj.name}} - {{obj.email}}<hr>
+
+"Method:" - {{getobjJSON()}}<hr>
+
+"I am " - {{starName}}<hr>
+
+<span class="fa fa-star"></span>
+<span class="fa fa-star-half-o"></span>
+
+<i class="glyphicon"
+    [class.glyphicon-star] = "isFav"
+   [class.glyphicon-star-empty] = "!isFav"
+   (click) = "clickStar()">{{isFav}}</i>
+
+
+

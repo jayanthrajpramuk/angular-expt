@@ -11,6 +11,8 @@ import { DataBindingExampleComponent } from './data-binding-example/data-binding
 import { CoursesComponent } from './courses/courses.component';
 import {CoursesServiceService } from './courses-service.service';
 import { SummaryPipe } from './summary.pipe';
+import { StarComponent } from './star/star.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -21,11 +23,13 @@ import { SummaryPipe } from './summary.pipe';
     TestCliComponent,
     DataBindingExampleComponent,
     CoursesComponent,
-    SummaryPipe
+    SummaryPipe,
+    StarComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AngularFontAwesomeModule
   ],
   providers: [CoursesServiceService],
   bootstrap: [AppComponent]

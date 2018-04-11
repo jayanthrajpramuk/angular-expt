@@ -6,9 +6,21 @@
   <div><app-courses-mh></app-courses-mh> - <app-courses2-mh></app-courses2-mh></div>
 
   <div><app-test-cli></app-test-cli></div>
-  <div><app-data-binding-example></app-data-binding-example></div>
+  <div><app-data-binding-example (change3)="changeFired($event)"></app-data-binding-example></div>
+  <!-- this doesnt work
+    as change3 is not fired from app-courses component-->
 
-  <div><app-courses></app-courses></div>
+  <div><app-courses (change2)="changeFired($event)"></app-courses></div> <!-- this doesnt work
+  as change2 is not fired from app-courses component-->
+
+  <div>
+  <app-star [isFav] = "isFavi"
+            [jayanth] = "jayanth"
+            [obj] = "obj"
+            [star-name] = "star"
+            (change) = "changeFired($event)">
+  </app-star>
+  </div>
 
  </div>
 

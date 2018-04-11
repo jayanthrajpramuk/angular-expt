@@ -10,6 +10,7 @@ public title = 'This is angular Title';
 public getTitle() {
 return this.title;
 }
+
   constructor() { }
 
   ngOnInit() {

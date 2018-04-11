@@ -123,5 +123,22 @@ Custom pipe:
 ng g pipe 'pipename'
 
 
+Section 5:
+-------------------------------
+@Input() : this is used when we want to bind values / objects from one component to another
+component. the component which will recieve should have @Input metadata.
+This will be used when we have a custom selector and the properties are not known to dom.
+Ex: img tag has src -> know dom property.
+  <fav> is a custom tag and all the attributes (custom) will not be known to dom , then we use
+  @Input metadata.
+
+can also use Input in component metadata.
+
+@Input('alias name') -> recomended . used when we have unique js names
+
+
+inline typescript data defn.
+
+
 
 
