@@ -13,6 +13,7 @@ import {CoursesServiceService } from './courses-service.service';
 import { SummaryPipe } from './summary.pipe';
 import { StarComponent } from './star/star.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { BootstrapPanelComponent } from './bootstrap-panel/bootstrap-panel.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     DataBindingExampleComponent,
     CoursesComponent,
     SummaryPipe,
-    StarComponent
+    StarComponent,
+    BootstrapPanelComponent
   ],
   imports: [
     BrowserModule,

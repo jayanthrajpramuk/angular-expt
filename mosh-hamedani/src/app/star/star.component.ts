@@ -14,17 +14,13 @@ title = 'star component';
 
 @Input('star-name') public starName;
 
-@Output() public change = new EventEmitter();
-  @Output() public change2 = new EventEmitter();
-  @Output() public change3 = new EventEmitter();
+@Output('change') public changeEmitter = new EventEmitter();
 
-
-public clickStar() {
+ public clickStar() {
   this.isFav = !this.isFav;
-  this.change.emit(this.isFav);
-  this.change2.emit(this.isFav);
-  this.change3.emit(this.isFav);
+  this.changeEmitter.emit(this.isFav);
 }
+
 
 public getobjJSON() {
 return JSON.stringify(this.obj);

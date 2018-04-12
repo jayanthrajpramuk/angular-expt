@@ -134,11 +134,24 @@ Ex: img tag has src -> know dom property.
 
 can also use Input in component metadata.
 
-@Input('alias name') -> recomended . used when we have unique js names
+@Input('alias name'), @Output('alias name') -> recomended . used when we have unique js names
 
 
-inline typescript data defn.
+inline typescript data defn for very small variables.
 
+Template :=> when we have more than 5 lines then use external , else use inline template
+
+no explicit html equests will be made for the html. instead it will be in main.bundle.js and all the html will be present in this file. we can search and check in debugger console
+
+
+applying css :
+3 ways : 1 directly in html , using css file , using component metadata.
+for 2nd and third approach, which ever is last will be taken to consideration.
+
+point to note is this css will not be leaked outside this component
+
+shadowDom concept : this is used using viewEncapsulation property.
+to avoid leak of CSS to another component. this is done using shadow root.
 
 
 
