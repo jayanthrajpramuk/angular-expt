@@ -153,5 +153,11 @@ point to note is this css will not be leaked outside this component
 shadowDom concept : this is used using viewEncapsulation property.
 to avoid leak of CSS to another component. this is done using shadow root.
 
+reusable component. lets say when we have button layout , bread curmb , table etc which is common , we can create common skeleton all these and pass data to this template accordingly .
+
+ng-content : everything , including div
+
+ng-container : only the content.
+
 
 
