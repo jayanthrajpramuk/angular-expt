@@ -160,4 +160,11 @@ ng-content : everything , including div
 ng-container : only the content.
 
 
+Section 6:
+----------
+ng-if : conditional display of dom.
+
+we can also use the concept of tempate variable in ngIf. we can evaluate to a condtion. Based on that condition we can show / hide perticular section of a div using <ng-template>
+herosReady, recuriting example.
+
 

@@ -14,6 +14,8 @@ import { SummaryPipe } from './summary.pipe';
 import { StarComponent } from './star/star.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { BootstrapPanelComponent } from './bootstrap-panel/bootstrap-panel.component';
+import { FavouriteComponent } from './favourite/favourite.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { BootstrapPanelComponent } from './bootstrap-panel/bootstrap-panel.compo
     CoursesComponent,
     SummaryPipe,
     StarComponent,
-    BootstrapPanelComponent
+    BootstrapPanelComponent,
+    FavouriteComponent
   ],
   imports: [
     BrowserModule,

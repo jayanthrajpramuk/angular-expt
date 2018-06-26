@@ -1,0 +1,88 @@
+57: alias output
+@output('alias-name')
+
+58: template : url or inline.
+cli -> separate file always
+all our html templates will be part of our JS file which will be bundled and will be present in
+main.bundle.js during run time
+
+59: styles / css
+1.stylesUrls -> external css -> array of files all are external
+2.styles -> array of styles -> inline
+3.directly in html using style tag (not recomended)
+
+the one which is loaded at the end will take the preference.
+it will completly ignore all other loaded css
+
+No leak of css for other component
+
+60: Encapsulation :
+viewEncapsulation -> emalulated (default) -> shadowDOM
+css will not be leaked.
+
+viewEncapsulation -> native -> will be leaked.
+
+
+61: ng-content: used in child component
+
+this is used when we need to pass html markup from root (parent) to child.
+- y do we do this ? to create a reusable component  so that no hard coding in the child component.
+- hw do we do this ? using a selector. may be class or Id. we add all the markup in the root, with a Id and then in the child class using ng-container , we mention the id where we want to take the content from .
+
+<ng-content select = "selector">. this selector will be present in the parent component. everything present in the selector tag will be replaced in the content section INCLUDING THE TAG OF THE SELECTOR AS WELL.
+
+62 : ng-container : used in parent component.
+the difference here is it will skip the selector tag and only pass the content which is present inside the selector tag
+
+
+Section 6 : DIRECTIVES :
+2 types of directives
+- which changes the dom by adding or removing. -> structural Dom
+- which changes the attributes of Dom elements
+63: Intro.
+
+64: ngIf :
+<div *ngIf = "condition"></div>
+concept of <ng-template> with template variable
+
+65 : hidden attribute :
+this acts as a attribute and the content will be hidden.
+since this is an attribute we add conditions to it by calling function in the ts file.
+
+ngIf vs hidden -> hidden will still have the content in the dom tree. But ngIf will remove it
+entirely from the Dom tree.
+
+hidden : Dom will be present but only hidden. it takes rendering memory as well. why waste
+memory when u dont want to show.
+
+ngIf -> if you have large tree with many attributes , then its better to use hidden as it takes
+up lot of memory to build the tree and monitor for changes of the attributes.
+
+change detection mechanism will still work for invisible properties
+
+66 : ngSwitch
+- ngSwitch -> value to compare with switch
+- ngSwitchCase -> cases
+- ngSwitchDefault -> default
+
+please chk the image
+
+67 : ngFor
+Image
+
+68 : ngfor and change detection
+
+69 : ngfor and trackBy
+
+
+70 : Leading asterisk.
+it is mainly for structural
+it basically turns down to ngIf, ! ngIf.
+
+
+
+
+
+
+
+

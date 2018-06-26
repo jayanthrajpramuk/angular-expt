@@ -10,16 +10,25 @@
   <!-- this doesnt work
     as change3 is not fired from app-courses component-->
 
-  <div><app-courses (change2)="changeFired($event)"></app-courses></div> <!-- this doesnt work
+  <div>
+  <app-courses (change2)="changeFired($event)"></app-courses>
+
+  </div> <!-- this doesnt work
   as change2 is not fired from app-courses component-->
 
   <div>
+
   <app-star [isFav] = "isFavi"
-            [jayanth] = "jayanth"
+            [inputfromApp] = "jayanth"
             [obj] = "obj"
             [star-name] = "star"
+            [valueFromParent] = "communicateVal"
+            (valueFromChildEvent) = "acceptValueFromChild($event)"
+            (dynamicValueFromChild) = "dynamicValueFromChildMethod($event)"
             (change) = "changeFired($event)">
   </app-star>
+
+
   </div>
 
   <app-bootstrap-panel>
@@ -27,6 +36,35 @@
     <div class="body"> this is header passed to reusable component</div>
     <ng-container class="footer">Footer with no noise</ng-container>
   </app-bootstrap-panel>
+
+  <div>Justice league team ready ??</div>
+  <div *ngIf="justiceLeague.length > 0; then herosReady else recruiting"></div>
+  <ng-template #herosReady>
+    <span><b>Hell Yeah !!</b></span>
+    <div *ngFor="let hero of justiceLeague">
+      <ul>
+        <li>
+          {{hero}}
+        </li>
+      </ul>
+    </div>
+  </ng-template>
+  <ng-template #recruiting>
+    <p>No , Aquaman is causing issues</p>
+  </ng-template>
+
+  <app-favourite [isMyFav] = "valFromAppComponent"
+                  [winner]="winner">
+
+  </app-favourite>
+<br>
+
+  <input type="button" name="testCommunication" value="communicate" (click)="communicate()">
+
+value from child after Communication CLick :  {{dynamicVal}}
+
+<br>
+value from child after Star CLick :  {{childValue}}
 
  </div>
 

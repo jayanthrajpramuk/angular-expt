@@ -1,0 +1,14 @@
+<p>
+ This is from  Favrouties!
+ {{newFav}} - {{isMyFav}} - {{winner}}
+
+ edited Content : {{edited}}</p>
+
+
+<div *ngIf="userRating > 4 ; then valid else invalid"></div>
+
+ <ng-template #valid> Template Variable : Valid</ng-template>
+ <ng-template #invalid> Template Variable :  InValid</ng-template>
+
+<div>show attribute</div>
+<div hidden>hide attribute</div>
