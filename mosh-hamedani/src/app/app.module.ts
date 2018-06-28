@@ -15,6 +15,7 @@ import { StarComponent } from './star/star.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { BootstrapPanelComponent } from './bootstrap-panel/bootstrap-panel.component';
 import { FavouriteComponent } from './favourite/favourite.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { FavouriteComponent } from './favourite/favourite.component';
     SummaryPipe,
     StarComponent,
     BootstrapPanelComponent,
-    FavouriteComponent
+    FavouriteComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,

@@ -12,3 +12,8 @@
 
 <div>show attribute</div>
 <div hidden>hide attribute</div>
+
+<div [class.dynamicClassInline]="userRating == 3"> class dynamic - conditional Inline</div>
+<div [class.dynamicClassMethod]="shouldClassAdded()"> class dynamic - conditional Method</div>
+
+<div [ngClass]="{'class1' : multiple}"> class dynamic - JSON</div>

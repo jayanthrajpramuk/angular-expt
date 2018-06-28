@@ -10,6 +10,7 @@ export class FavouriteComponent implements OnInit {
   public localVariable = 'local Variable';
   public newFav;
   public userRating = 3;
+  public multiple = true;
 
   @Input()
   set isMyFav(isMyFav: string) {
@@ -23,6 +24,9 @@ export class FavouriteComponent implements OnInit {
 
   public edited = this.localVariable + ' + editied Content';
 
+  public shouldClassAdded() {
+        return false;
+  }
 
   constructor() {
   }

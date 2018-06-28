@@ -79,8 +79,40 @@ Image
 it is mainly for structural
 it basically turns down to ngIf, ! ngIf.
 
+71 , 72: adding class / styles: both are same concepts , when it comes to adding multiple
+2 approaches.
+    - can add multiple [class.classname] = expression to add multiple classes.
+    - can use [ngClass] = {json} syntax , if multiple class has to be added with multiple conditions
+
+73: Safe traversal:
+If we have complex objects , lets say -> compnay.department.project.employeeName
+
+then we can use *ngIf attribute to show he or use the ? to check and display the value.
 
 
+ngModel should be used with name attribute in a html element
+this model is a js object which has formcontrol class  which can be used for state changes of fields. when we add ngModel then angular created under the hood
+
+concept of template variable in html using #
+concept of assigning ngModel to template Variable #templateVar=ngModel
+freequesntly used ngModel in form control.
+      - use of touched and isvalid classes in formControl
+
+concept of specific validation like minlength , maxlength and pattern
+
+template variable = "ngForm".
+now this template variable can be passed to TS file on click of button or form submit etc
+this ngForm has : all values in the form.
+                  formGroup object
+                  formcontrols for each element.
+ngForm exposes output property (onSubmit) by default which is used to capture all the fields in
+a form
+
+
+concept of ngModelGroup : this is used when we want to have tree structure in the form JSON object.
+- can get explicity the ngModelGroup json  object.
+- can get group and single element values from from object.
+- group level validations can be performed here
 
 
 

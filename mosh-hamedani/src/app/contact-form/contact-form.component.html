@@ -1,0 +1,64 @@
+<form #f="ngForm" (submit)="formSubmitted(f)">
+<div class="form-group">
+  <label for="firstName">First Name:</label>
+  <input required type="text" class="form-control" name="firstName" id="firstName" [(ngModel)] = "firstName" #firstNametemplateVariable = "ngModel" (change)="inputChanged(firstNametemplateVariable)" minlength="5" maxlength="10" pattern="Jayanth">
+  <div class="alert alert-danger"
+        *ngIf="firstNametemplateVariable.touched && !firstNametemplateVariable.valid">
+    <div *ngIf="firstNametemplateVariable.errors.required">First Name is Required</div>
+    <div *ngIf="firstNametemplateVariable.errors.minlength">min length is 5</div>
+     <div *ngIf="firstNametemplateVariable.errors.maxlength">max length is 10</div>
+     <div *ngIf="firstNametemplateVariable.errors.pattern">Name is not matching Pattern</div>
+
+  </div>
+</div>
+
+  <div class="form-group">
+    <label for="comment">Comment:</label>
+    <input type="text" class="form-control" name="comment" id="comment" [(ngModel)] = "comment">
+  </div>
+
+<div ngModelGroup="address" #address = "ngModelGroup">
+
+
+  <div class="form-group">
+      <label for="comment">add1</label>
+      <input type="text" class="form-control" name="add1" id="add1" [(ngModel)] = "add1">
+    </div>
+  <div class="form-group">
+      <label for="comment">add2:</label>
+      <input type="text" class="form-control" name="add2" id="add2" [(ngModel)] = "add2">
+    </div>
+  <div class="form-group">
+      <label for="comment">add3:</label>
+      <input type="text" class="form-control" name="add3" id="add3" [(ngModel)] = "add3">
+    </div>
+    <div class="form-group">
+        <label for="check">check:</label>
+        <input type="checkbox" name="check" id="check" [(ngModel)] = "check">
+      </div>
+
+      <div class="form-group">
+        <label for="radio">radio1:</label>
+        <input type="radio" name="radio" id="radio1" [(ngModel)] = "radio" value="1">
+
+        <label for="radio">radio2:</label>
+        <input type="radio" name="radio" id="radio2" [(ngModel)] = "radio" value="2">
+      </div>
+
+  <div class="form-group">
+                  <label for="select">Select:</label>
+       <select name="commType" id="commType" [(ngModel)] = "selectedVal">
+         <option value="ps">select</option>
+         <option *ngFor ="let type of commType" [value] = "type.id" [ngValue]="type">{{type
+         .name}}</option>
+       </select>
+       </div>
+
+</div>
+{{f.value | json}}
+*******
+{{selectedVal.name}}
+
+  <button class="btn btn-primary" (click)="onCLick(f, address)" [disabled] = "!f.valid">Click Me
+  </button>
+</form>
