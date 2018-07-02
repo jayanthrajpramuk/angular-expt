@@ -1,4 +1,5 @@
-<!--The content below is only a placeholder and can be replaced.-->
+<!--
+The content below is only a placeholder and can be replaced.
 <div style="text-align:center">
   <h1>
     Welcome to {{title}}!
@@ -7,14 +8,14 @@
 
   <div><app-test-cli></app-test-cli></div>
   <div><app-data-binding-example (change3)="changeFired($event)"></app-data-binding-example></div>
-  <!-- this doesnt work
-    as change3 is not fired from app-courses component-->
+  &lt;!&ndash; this doesnt work
+    as change3 is not fired from app-courses component&ndash;&gt;
 
   <div>
   <app-courses (change2)="changeFired($event)"></app-courses>
 
-  </div> <!-- this doesnt work
-  as change2 is not fired from app-courses component-->
+  </div> &lt;!&ndash; this doesnt work
+  as change2 is not fired from app-courses component&ndash;&gt;
 
   <div>
 
@@ -70,3 +71,5 @@ value from child after Star CLick :  {{childValue}}
  <app-contact-form></app-contact-form>
 
 
+-->
+<app-http-exp></app-http-exp>

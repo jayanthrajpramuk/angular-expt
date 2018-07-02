@@ -1,0 +1,27 @@
+<p>
+  http-exp works!</p>
+
+
+<div>
+  <ul>
+    <li *ngFor="let user of users">{{user.name}}</li>
+  </ul>
+
+</div>
+<hr>
+<input type="text" name="title" id="title" [(ngModel)]="title" #titleref="ngModel">
+<button name="add" (click)="onAdd(titleref)">add</button>
+<div>
+  <ul>
+    <li *ngFor="let post of posts">
+    <div><button class="btn btn-primary btn-sm" (click)="updateClicked(post)">update</button>
+    - {{post.title}} - <button class="btn btn-danger btn-sm" (click)="deleteClicked(post)">Delete
+    </button></div>
+
+    </li>
+  </ul>
+
+</div>
+
+
+

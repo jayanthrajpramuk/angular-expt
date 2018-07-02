@@ -1,0 +1,6 @@
+- http module is rquired
+
+- separation of ceoncern
+  it depends where we want to subscribe.
+
+- convention is like get the data from service and then subscribe from the outer layer.

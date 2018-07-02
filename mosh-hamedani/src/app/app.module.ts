@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import {HttpModule} from '@angular/http';
 
 import { AppComponent } from './app.component';
 import {Courses1Component} from './app.courses1.component';
@@ -16,6 +17,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { BootstrapPanelComponent } from './bootstrap-panel/bootstrap-panel.component';
 import { FavouriteComponent } from './favourite/favourite.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { HttpExpComponent } from './http-exp/http-exp.component';
+import {PostsService} from './services/posts.service';
 
 
 @NgModule({
@@ -31,14 +34,16 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     StarComponent,
     BootstrapPanelComponent,
     FavouriteComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    HttpExpComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    HttpModule
   ],
-  providers: [CoursesServiceService],
+  providers: [CoursesServiceService, PostsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
