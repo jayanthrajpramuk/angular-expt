@@ -5,7 +5,7 @@ import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angula
   templateUrl: './star.component.html',
   styleUrls: ['./star.component.css']
 })
-export class StarComponent implements OnInit, OnChanges{
+export class StarComponent implements OnInit, OnChanges {
 
 @Input() public isFav = true;
 @Input() public inputfromApp = 'Jayanth';
