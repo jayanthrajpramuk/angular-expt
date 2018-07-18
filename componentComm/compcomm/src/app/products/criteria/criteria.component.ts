@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'pm-criteria',
@@ -13,6 +13,18 @@ export class CriteriaComponent implements OnInit , OnChanges{
   @Input() dynamicValue: string
   @Input() hitCount: string;
   @Input() parentChange: string;
+  private _child: string;
+  @Output() childChange: EventEmitter<string> =  new EventEmitter<string>();
+
+  get ngModelchild() {
+    return this._child;
+  }
+
+  set ngModelchild(value) {
+    console.log("changed", value);
+    this._child = value;
+    this.childChange.emit(value);
+  }
 
   constructor() { }
 

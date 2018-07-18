@@ -8,6 +8,7 @@ import { Action } from 'rxjs/scheduler/Action';
 import { Http } from '@angular/http';
 import { NgModel } from '@angular/forms';
 import { CriteriaComponent } from './criteria/criteria.component';
+import { EventEmitter } from 'protractor';
 
 @Component({
     templateUrl: './product-list.component.html',
@@ -32,14 +33,14 @@ export class ProductListComponent implements OnInit, AfterViewInit {
         console.log("Criteria Component Value is 2 " , this.critTemplate2);
 
 
-      this.ngModelValues._results[3].valueChanges
+     /* this.ngModelValues._results[3].valueChanges
         .subscribe(
             ()=> {
                 console.log("Value is CHanged from ngModel! " , this.ngmodel5);
                 this.newparentvalue = this.ngmodel5;
                
             }
-        ); 
+        ); */
         
         
        
@@ -139,6 +140,10 @@ export class ProductListComponent implements OnInit, AfterViewInit {
         //console.log("Set fired")
           this._getsetexample = value;
           this.performFilter(value);
+    }
+
+    onChildChange(value) {
+                console.log("After Change in the child comp", value);
     }
 
 

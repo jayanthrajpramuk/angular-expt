@@ -29,16 +29,18 @@
                 <label for="ipvalue5">Child Mapper :</label>
                 <input type="text" #ipvalue5 [(ngModel)]='ngmodel5' name="ipvalue5" id="ipvalue5"/>
                 
-                <pm-criteria #critemplate [enteredValue] = "'jayanth'"
+                 <pm-criteria #critemplate [enteredValue] = "'jayanth'"
                         [dynamicValue] = "dynamicValue"
                         [hitCount] =  filteredProducts?.length
-                        [parentChange] = "newparentvalue"></pm-criteria>
+                        [parentChange] = "newparentvalue"
+                        (childChange)= "onChildChange($event)">
+                    </pm-criteria>
 
-                        <pm-criteria #critemplate2 [enteredValue] = "'jayanth2'"
+                     <!--   <pm-criteria #critemplate2 [enteredValue] = "'jayanth2'"
                         [dynamicValue] = "dynamicValue"
                         [hitCount] =  filteredProducts?.length
                         [parentChange] = "newparentvalue"></pm-criteria>
-            </div>
+            </div>  -->
 
         <div class='table-responsive'>
             <table class='table'
