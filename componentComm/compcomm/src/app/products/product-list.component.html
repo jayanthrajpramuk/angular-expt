@@ -9,7 +9,7 @@
             <div class='col-md-2'>Filter by:</div>
             <div class='col-md-4'>
                 <!-- this is long format of 2 way binding. concept here-->
-                    long 2 way :<input type='text' [ngModel]='testfilter' 
+                    long 2 way :<input type='text' #testfilterRef [ngModel]='testfilter' 
                                         (ngModelChange)='ontestFilterChange($event)'/>
                     <div [hidden]='!testfilter'>testFilter : {{testfilter}}</div>
                             <!-- concept end-->
@@ -24,10 +24,25 @@
                 <h3>Filtered by: {{listFilter}} </h3>
             </div>
         </div>
+<br>
+        <div class="row">
+                <label for="ipvalue5">Child Mapper :</label>
+                <input type="text" #ipvalue5 [(ngModel)]='ngmodel5' name="ipvalue5" id="ipvalue5"/>
+                
+                <pm-criteria #critemplate [enteredValue] = "'jayanth'"
+                        [dynamicValue] = "dynamicValue"
+                        [hitCount] =  filteredProducts?.length
+                        [parentChange] = "newparentvalue"></pm-criteria>
+
+                        <pm-criteria #critemplate2 [enteredValue] = "'jayanth2'"
+                        [dynamicValue] = "dynamicValue"
+                        [hitCount] =  filteredProducts?.length
+                        [parentChange] = "newparentvalue"></pm-criteria>
+            </div>
 
         <div class='table-responsive'>
             <table class='table'
-                    *ngIf='products && products.length'>
+                    *ngIf='products && products.length' #tableRef>
                 <thead>
                     <tr>
                         <th>
@@ -76,6 +91,15 @@
         </div>
     </div>
 </div>
+<input type="text" #ipvalue/>
+<input type="text" #ipvalue2/>
+<input type="text" #ipvalue3/>
+<br>
+
+
+
+
+
 <div *ngIf='errorMessage' class='alert alert-danger'>
     Error: {{ errorMessage }}
 </div>

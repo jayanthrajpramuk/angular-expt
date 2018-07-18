@@ -9,6 +9,7 @@ import { ProductEditComponent } from './edit/product-edit.component';
 
 import { ProductService } from './product.service';
 import { ProductEditGuard } from './edit/product-edit-guard.service';
+import { CriteriaComponent } from './criteria/criteria.component';
 
 @NgModule({
   imports: [
@@ -26,7 +27,8 @@ import { ProductEditGuard } from './edit/product-edit-guard.service';
   declarations: [
     ProductListComponent,
     ProductDetailComponent,
-    ProductEditComponent
+    ProductEditComponent,
+    CriteriaComponent
   ],
   providers: [
     ProductService,
