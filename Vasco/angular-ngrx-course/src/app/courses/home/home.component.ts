@@ -5,6 +5,7 @@ import {map} from "rxjs/operators";
 import {CoursesService} from "../services/courses.service";
 import {Store} from "@ngrx/store";
 import {AppState} from "../../reducers/index";
+import {CourseAction, CoursesActions} from "../courses.actions";
 
 @Component({
     selector: 'home',
@@ -19,9 +20,30 @@ export class HomeComponent implements OnInit {
 
     advancedCourses$: Observable<Course[]>;
 
-    constructor(private coursesService: CoursesService, private store: Store<AppState>) {
-      // this.store.subscribe(); should never do this. instead we should use dispatch action method.
+    courses = {
+          id: 1,
+          description: "Intro to NgRx",
+          iconUrl: "",
+          courseListIcon: "",
+          longDescription: "Basics of Ngrx",
+          category: "Advanced",
+          lessonsCount: 9,
+          promo: false
+    };
+
+    constructor(private coursesService: CoursesService,
+    // point 0 : store can be injected
+    private store: Store<AppState>) {
+     // point 1 ==>
+      // this.store.subscribe(); should never do this. instead we should use dispatch action
+     // method.
     }
+
+  testCourseAction() {
+  console.log(" -- in Course Action --");
+  this.store.dispatch(new CourseAction(this.courses ));
+
+  }
 
     ngOnInit() {
 

@@ -21,8 +21,8 @@ import { AuthEffects } from './auth.effects';
         MatInputModule,
         MatButtonModule,
         RouterModule.forChild([{path: '', component: LoginComponent}]),
-        StoreModule.forFeature('auth', fromAuth.reducer),
-        EffectsModule.forFeature([AuthEffects]),
+        StoreModule.forFeature('auth', fromAuth.reducer)/*,
+        EffectsModule.forFeature([AuthEffects]),*/
 
     ],
     declarations: [LoginComponent],

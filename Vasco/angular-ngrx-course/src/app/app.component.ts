@@ -31,7 +31,7 @@ isLoggedOut$: Observable <boolean>;
         map(state => state.auth.loggedIn)
       )*/
       .subscribe(state => {
-        console.log('Logged in state is', state.auth.loggedIn);
+       // console.log('Logged in state is', state.auth.loggedIn);
         console.log('Full State is', state);
       });
 

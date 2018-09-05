@@ -12,7 +12,7 @@ export interface AuthState {
 }
 
 export const initialState: AuthState  = {
-  loggedIn : false,
+    loggedIn : false,
     accentClicked: false,
     user : undefined,
     selectedLang : 'en'
