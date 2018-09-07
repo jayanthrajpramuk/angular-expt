@@ -34,3 +34,9 @@ export class Langauge implements Action {
 }
 
 export type AuthActions = Login | Logout | Accent | Langauge;
+
+
+// every action will have 3 sections.
+// 1. Action class which has type and constructor which accepts payload
+// 2. List of all the actions possible, this will normally be used in the reducer.
+// 3. enum for Action name and description for each type in the action class

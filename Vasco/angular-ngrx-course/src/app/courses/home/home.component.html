@@ -8,7 +8,8 @@
     </div>
 
     <div>
-      <button (click)="testCourseAction()">Course Action</button>
+      <button (click)="testCourseAction()">Course Action </button>
+      {{courseTitle$ | async}} - {{courseNick$ | async}}
     </div>
 
     <mat-tab-group>

@@ -12,7 +12,9 @@ defaultCourse: string;
 export const initialState: CoursesState = {
   defaultCourse : 'Basic Manners',
   courseNick: "Boo",
-  course: undefined
+  course: {
+    description : 'testing Desc'
+  }
 };
 
 export function reducer(state: CoursesState = initialState, action: CoursesActions): CoursesState {
