@@ -20,12 +20,13 @@ import {RouterStateSerializer, StoreRouterConnectingModule} from "@ngrx/router-s
 import { EffectsModule } from '@ngrx/effects';
 import { reducers, metaReducers } from './reducers';
 import { environment } from '../../src/environments/environment';
+import {AuthGaurd} from "./auth/auth.gaurd";
 
 const routes: Routes = [
     {
         path: 'courses',
         loadChildren: './courses/courses.module#CoursesModule',
-        canActivate: [],
+        canActivate: [AuthGaurd],
     },
     {
         path: "**",

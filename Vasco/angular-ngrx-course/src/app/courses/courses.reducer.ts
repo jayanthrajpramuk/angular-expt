@@ -10,10 +10,17 @@ defaultCourse: string;
 }
 
 export const initialState: CoursesState = {
-  defaultCourse : 'Basic Manners',
+  defaultCourse: 'Basic Manners',
   courseNick: "Boo",
   course: {
-    description : 'testing Desc'
+    id: 0,
+    iconUrl: "",
+    courseListIcon: "",
+    longDescription: "",
+    category: "",
+    lessonsCount: 0,
+    promo: false,
+    description: 'testing Desc'
   }
 };
 
@@ -23,7 +30,7 @@ export function reducer(state: CoursesState = initialState, action: CoursesActio
       return {
         courseNick: "heavy topic",
         course: action.payload,
-        defaultCourse : undefined
+        defaultCourse : "NA"
       };
     }
 

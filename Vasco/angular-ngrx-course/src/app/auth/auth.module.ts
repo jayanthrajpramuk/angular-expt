@@ -11,6 +11,7 @@ import {AuthService} from "./auth.service";
 import * as fromAuth from './auth.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects } from './auth.effects';
+import {AuthGaurd} from "./auth.gaurd";
 
 
 @NgModule({
@@ -32,7 +33,10 @@ export class AuthModule {
     static forRoot(): ModuleWithProviders {
         return {
             ngModule: AuthModule,
-            providers: [AuthService]
+            providers: [
+                        AuthService,
+                        AuthGaurd
+                        ]
         };
     }
 }

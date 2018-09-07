@@ -7,6 +7,7 @@ import {select, Store} from "@ngrx/store";
 import {AppState} from "../../reducers/index";
 import {CourseAction, CoursesActions} from "../courses.actions";
 import {getCourseNick, getCourseTitle} from "../course.selectors";
+import {isLoggedIn, isLoggedOut} from "../../auth/auth.selectors";
 
 @Component({
     selector: 'home',
@@ -23,6 +24,8 @@ export class HomeComponent implements OnInit {
 
   courseTitle$: Observable<string>;
   courseNick$: Observable<string>;
+  loginFlag$: Observable<string>;
+  logoutFlag$: Observable<string>;
 
 
     courses = {
@@ -74,6 +77,8 @@ export class HomeComponent implements OnInit {
 // async pipe it gets changed automatically.these select function will be registered.
         this.courseTitle$ = this.store.pipe(select(getCourseTitle));
         this.courseNick$ = this.store.pipe(select(getCourseNick));
+        this.loginFlag$ = this.store.pipe(select(isLoggedIn));
+        this.logoutFlag$ = this.store.pipe(select(isLoggedOut));
 
              }
 

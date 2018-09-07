@@ -7,10 +7,23 @@
  export const isLoggedIn = createSelector(
  selectAuthState, // taking the selector as input. But chekc how to take multiple selectors as
  // input
- auth => !auth.loggedIn
+ auth => auth.loggedIn
  );
 
  export const isLoggedOut = createSelector(
  selectAuthState,
- auth => !!auth.loggedIn
+ auth => !isLoggedIn
+ );
+
+
+export const showLogin = createSelector(
+  selectAuthState, // taking the selector as input. But chekc how to take multiple selectors as
+  // input
+  auth => !auth.loggedIn
+);
+
+ export const showLogout = createSelector(
+   selectAuthState, // taking the selector as input. But chekc how to take multiple selectors as
+   // input
+   auth => !!auth.loggedIn
  );

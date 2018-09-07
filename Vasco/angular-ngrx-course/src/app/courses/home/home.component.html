@@ -10,6 +10,8 @@
     <div>
       <button (click)="testCourseAction()">Course Action </button>
       {{courseTitle$ | async}} - {{courseNick$ | async}}
+      Login Flag : {{loginFlag$ | async}}
+      Logout Flag : {{logoutFlag$ | async}}
     </div>
 
     <mat-tab-group>
