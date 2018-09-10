@@ -5,7 +5,10 @@ export enum AuthActionTypes {
   LoginAction = '[LoginAction] Login Action',
   LogoutAction = '[LogoutAction] Logout Action',
   AccentAction = '[AccentAction] AccentAction Action',
-  LanguageAction = '[Language Action] Language Action'
+  LanguageAction = '[Language Action] Language Action',
+  PrimeRequestedAction = '[Prime Requested Action] Prime-Requested Action',
+  PrimeSuccessAction = '[Prime Success Action] Prime-Success Action',
+  PrimeFailureAction = '[Prime Failure Action] Prime-Failure Action',
 }
 
 export class Login implements Action {
@@ -33,7 +36,25 @@ export class Langauge implements Action {
   }
 }
 
-export type AuthActions = Login | Logout | Accent | Langauge;
+export class PrimeRequested implements Action {
+  readonly type = AuthActionTypes.PrimeRequestedAction;
+  constructor(public payload: string) {
+  }
+}
+
+export class PrimeSuccess implements Action {
+  readonly type = AuthActionTypes.PrimeSuccessAction;
+  constructor(public payload: string) {
+  }
+}
+
+export class PrimeFailure implements Action {
+  readonly type = AuthActionTypes.PrimeFailureAction;
+  constructor(public payload: string) {
+  }
+}
+
+export type AuthActions = Login | Logout | Accent | Langauge |PrimeRequested | PrimeSuccess | PrimeFailure;
 
 
 // every action will have 3 sections.

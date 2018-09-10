@@ -24,8 +24,8 @@ export class HomeComponent implements OnInit {
 
   courseTitle$: Observable<string>;
   courseNick$: Observable<string>;
-  loginFlag$: Observable<string>;
-  logoutFlag$: Observable<string>;
+  loginFlag$: Observable<boolean>;
+  logoutFlag$: Observable<boolean>;
 
 
     courses = {

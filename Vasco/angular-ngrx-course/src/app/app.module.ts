@@ -51,6 +51,7 @@ const routes: Routes = [
         MatToolbarModule,
         AuthModule.forRoot(),
         StoreModule.forRoot(reducers, { metaReducers }),
+        EffectsModule.forRoot([]), // this is needed, to register. even if its blank
         !environment.production ? StoreDevtoolsModule.instrument() : [],
     ],
     providers: [],

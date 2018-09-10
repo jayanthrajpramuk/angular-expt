@@ -6,6 +6,7 @@ import {Logout} from "./auth/login.actions";
 import {map} from "rxjs/internal/operators";
 import {isLoggedIn, isLoggedOut, showLogin, showLogout} from "./auth/auth.selectors";
 import {Router} from "@angular/router";
+import {ClearAllCoursesAction} from "./courses/courses.actions";
 
 @Component({
   selector: 'app-root',
@@ -50,6 +51,7 @@ isLoggedOut$: Observable <boolean>;
 
   logout() {
     this.store.dispatch(new Logout());
+    this.store.dispatch(new ClearAllCoursesAction());
     this.router.navigateByUrl('/login');
   }
 

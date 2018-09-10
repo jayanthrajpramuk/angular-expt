@@ -33,6 +33,10 @@ export function reducer(state: CoursesState = initialState, action: CoursesActio
         defaultCourse : "NA"
       };
     }
+    // important thing here is that this action is being called from another module
+    case  CoursesActionTypes.ClearAllCoursesAction: {
+     return initialState;
+    }
 
     default:
       return state;

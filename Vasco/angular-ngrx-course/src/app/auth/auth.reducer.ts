@@ -50,6 +50,10 @@ console.log("the action is " + action);
         selectedLang: action.payload
       };
     }
+    case  AuthActionTypes.PrimeSuccessAction: {
+        console.log("Reducer");
+         return state;
+       }
     case  AuthActionTypes.AccentAction: {
     const currentState = state.user;
      /* return {

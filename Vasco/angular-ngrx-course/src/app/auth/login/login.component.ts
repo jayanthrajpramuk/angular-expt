@@ -8,7 +8,7 @@ import {tap} from "rxjs/operators";
 import {noop} from "rxjs";
 import {Router} from "@angular/router";
 import {AppState} from "../../reducers/index";
-import {Accent, AuthActions, Langauge, Login} from "../login.actions";
+import {Accent, AuthActions, Langauge, Login, PrimeRequested} from "../login.actions";
 import {AuthState} from "../auth.reducer";
 
 @Component({
@@ -60,6 +60,11 @@ export class LoginComponent implements OnInit {
   language(selectedLang) {
   console.log('Selected Language is ' + selectedLang);
       this.store.dispatch(new Langauge(selectedLang));
+  }
+
+  requestPrime(userId) {
+  console.log("In Requested Prime !");
+  this.store.dispatch(new PrimeRequested(userId));
   }
 
 
