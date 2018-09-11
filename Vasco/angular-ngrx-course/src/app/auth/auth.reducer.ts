@@ -29,6 +29,7 @@ export function reducer(state: AuthState = initialState, action: AuthActions) {
 console.log("the action is " + action);
   switch (action.type) {
     case  AuthActionTypes.LoginAction: {
+    console.log("LoginAction from Reducer");
       return {
         ...state,  // concept here : ... is to keep old and only update new one. to make it
         // immutable

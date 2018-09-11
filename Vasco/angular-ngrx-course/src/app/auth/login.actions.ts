@@ -3,6 +3,7 @@ import {User} from "../model/user.model";
 
 export enum AuthActionTypes {
   LoginAction = '[LoginAction] Login Action',
+  LoginReqAction = '[LoginReqAction] LoginReqAction Action',
   LogoutAction = '[LogoutAction] Logout Action',
   AccentAction = '[AccentAction] AccentAction Action',
   LanguageAction = '[Language Action] Language Action',
@@ -13,6 +14,12 @@ export enum AuthActionTypes {
 
 export class Login implements Action {
   readonly type = AuthActionTypes.LoginAction;
+  constructor(public payload: User) {
+  }
+}
+
+export class LoginReqAction implements Action {
+  readonly type = AuthActionTypes.LoginReqAction;
   constructor(public payload: User) {
   }
 }
@@ -54,7 +61,7 @@ export class PrimeFailure implements Action {
   }
 }
 
-export type AuthActions = Login | Logout | Accent | Langauge |PrimeRequested | PrimeSuccess | PrimeFailure;
+export type AuthActions = Login | Logout | Accent | Langauge |PrimeRequested | PrimeSuccess | PrimeFailure | LoginReqAction;
 
 
 // every action will have 3 sections.
